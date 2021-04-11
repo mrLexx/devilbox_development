@@ -1,0 +1,187 @@
+# Note:
+# To effectively apply the changes you will have
+# to re-index the git index (if there are already
+# commited files)
+#
+# $ git rm -r -f --cached .
+# $ git add .
+# $ git commit -m ".gitignore index rebuild"
+#
+
+
+######################################
+# CUSTOM
+######################################
+
+# Ignore variable data
+/config/.env
+/backups/*
+!/backups/.keepme
+
+# Ignore Data dirs
+/data/www/*
+/data/solr/*
+/data/rabbitmq/*
+!/data/.keepme
+!/data/*/.keepme
+
+
+# Ignore compose override file
+/config/docker-compose.override.yml
+
+!/config/cfg/.keepme
+!/config/cfg/*/.keepme
+
+# Ignore custom global vhost gen templates
+/config/cfg/vhost-gen/apache22.conf
+/config/cfg/vhost-gen/apache24.conf
+/config/cfg/vhost-gen/nginx.conf
+
+# Ignore custom HTTPD configs
+/config/cfg/apache-2.2/*.conf
+/config/cfg/apache-2.4/*.conf
+/config/cfg/nginx-stable/*.conf
+/config/cfg/nginx-mainline/*.conf
+
+# Ignore custom MySQL configs
+/config/cfg/mysql-5.5/*.cnf
+/config/cfg/mysql-5.6/*.cnf
+/config/cfg/mysql-5.7/*.cnf
+/config/cfg/mysql-8.0/*.cnf
+/config/cfg/mariadb-5.5/*.cnf
+/config/cfg/mariadb-10.0/*.cnf
+/config/cfg/mariadb-10.1/*.cnf
+/config/cfg/mariadb-10.2/*.cnf
+/config/cfg/mariadb-10.3/*.cnf
+/config/cfg/mariadb-10.4/*.cnf
+/config/cfg/mariadb-10.5/*.cnf
+/config/cfg/percona-5.5/*.cnf
+/config/cfg/percona-5.6/*.cnf
+/config/cfg/percona-5.7/*.cnf
+/config/cfg/percona-8.0/*.cnf
+
+# Ignore custom PHP.ini configs
+/config/cfg/php-ini-5.2/*.ini
+/config/cfg/php-ini-5.3/*.ini
+/config/cfg/php-ini-5.4/*.ini
+/config/cfg/php-ini-5.5/*.ini
+/config/cfg/php-ini-5.6/*.ini
+/config/cfg/php-ini-7.0/*.ini
+/config/cfg/php-ini-7.1/*.ini
+/config/cfg/php-ini-7.2/*.ini
+/config/cfg/php-ini-7.3/*.ini
+/config/cfg/php-ini-7.4/*.ini
+/config/cfg/php-ini-8.0/*.ini
+
+# Ignore custom PHP-FPM configs
+/config/cfg/php-fpm-5.2/php-fpm.xml
+/config/cfg/php-fpm-5.3/*.conf
+/config/cfg/php-fpm-5.4/*.conf
+/config/cfg/php-fpm-5.5/*.conf
+/config/cfg/php-fpm-5.6/*.conf
+/config/cfg/php-fpm-7.0/*.conf
+/config/cfg/php-fpm-7.1/*.conf
+/config/cfg/php-fpm-7.2/*.conf
+/config/cfg/php-fpm-7.3/*.conf
+/config/cfg/php-fpm-7.4/*.conf
+/config/cfg/php-fpm-8.0/*.conf
+/config/cfg/php-fpm-8.1/*.conf
+
+# Ignore custom PHP-FPM startup scripts
+/config/autostart/*.sh
+/config/cfg/php-startup-5.2/*.sh
+/config/cfg/php-startup-5.3/*.sh
+/config/cfg/php-startup-5.4/*.sh
+/config/cfg/php-startup-5.5/*.sh
+/config/cfg/php-startup-5.6/*.sh
+/config/cfg/php-startup-7.0/*.sh
+/config/cfg/php-startup-7.1/*.sh
+/config/cfg/php-startup-7.2/*.sh
+/config/cfg/php-startup-7.3/*.sh
+/config/cfg/php-startup-7.4/*.sh
+/config/cfg/php-startup-8.0/*.sh
+/config/cfg/php-startup-8.1/*.sh
+
+# Ignorecustom Varnish configs
+/config/cfg/varnish-4/*.vcl
+/config/cfg/varnish-5/*.vcl
+/config/cfg/varnish-6/*.vcl
+
+
+# Ignore supervisord configs
+/config/supervisor/*.conf
+
+# Keep folders
+!.keepme
+
+
+######################################
+# GENERIC
+######################################
+
+###### std ######
+.lock
+
+###### patches/diffs ######
+*.patch
+*.diff
+*.orig
+*.rej
+
+
+######################################
+# Operating Systems
+######################################
+
+###### OSX ######
+._*
+.DS*
+.Spotlight-V100
+.Trashes
+
+###### Windows ######
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.shortcut
+
+######################################
+# Editors
+######################################
+
+###### Sublime ######
+*.sublime-workspace
+*.sublime-project
+
+###### Eclipse ######
+.classpath
+.buildpath
+.project
+.settings/
+
+###### Netbeans ######
+/nbproject/
+
+###### Intellij IDE ######
+.idea/
+.idea_modules/
+
+###### vim ######
+*.swp
+*.swo
+*.swn
+*.swm
+*~
+
+###### TextMate ######
+.tm_properties
+*.tmproj
+
+###### BBEdit ######
+*.bbprojectd
+*.bbproject
+
+###### VS Code ######
+/.vscode
